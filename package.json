@@ -1,0 +1,12 @@
+{
+  "name": "nodejs-boiler",
+  "version": "1.0.0",
+  "description": "A boilerplate application for Node.js TS, and Express server.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": ["typescript", "nodejs", "express", "jest"],
+  "author": "sa-webb",
+  "license": "ISC"
+}
