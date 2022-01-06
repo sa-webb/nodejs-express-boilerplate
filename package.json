@@ -1,5 +1,5 @@
 {
-  "name": "nodejs-boiler",
+  "name": "nodejs-express-boilerplate",
   "version": "0.1.1",
   "description": "A boilerplate application for Node.js TS, and Express server.",
   "main": "index.js",
