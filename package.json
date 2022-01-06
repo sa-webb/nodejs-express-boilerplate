@@ -4,7 +4,7 @@
   "description": "A boilerplate application for Node.js TS, and Express server.",
   "main": "index.js",
   "scripts": {
-    "build": "tsc -p .tsconfig.prod.json",
+    "build": "npm run pre-build tsc -p tsconfig.prod.json",
     "clear": "rimraf dist",
     "dev": "nodemon -r dotenv/config dist/index.js",
     "lint": "eslint src/**/*.ts",
