@@ -44,7 +44,7 @@ const format = winston.format.combine(
   winston.format.printf((info) => `${info.timestamp} ${info.level}: ${info.message}`)
 );
 
-const logPath = path.join(__dirname, "../logs");
+const logPath = path.join(__dirname, "../../logs");
 
 const transports: [FileTransportInstance, FileTransportInstance] | [ConsoleTransportInstance] =
   __prod__
