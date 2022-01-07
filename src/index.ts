@@ -2,7 +2,13 @@ import App from "./app";
 
 import type { Server } from "http";
 import type { AddressInfo } from "net";
+import Environment from "./environments/environment";
+import { setGlobalEnvironment } from "./global";
 
+import { logger } from "./logger";
+
+const env: Environment = new Environment();
+setGlobalEnvironment(env);
 const app: App = new App();
 let server: Server;
 
@@ -16,17 +22,17 @@ const serverError = (error: NodeJS.ErrnoException) => {
 
 const serverListening = () => {
   const addressInfo: AddressInfo = <AddressInfo>server.address();
-  console.log(`Server is listening on: http://localhost:${addressInfo.port}`);
+  logger.info(`Server is listening on: http://localhost:${addressInfo.port}`);
 };
 
 app
   .init()
   .then(() => {
-    app.express.set("port", 8080);
+    app.express.set("port", environment.port);
     server = app.httpServer;
     server.on("error", serverError);
     server.on("listening", serverListening);
-    server.listen(8080);
+    server.listen(environment.port);
   })
   .catch((err: Error) => {
     console.log("Server failed to start: ", err);
