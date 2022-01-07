@@ -17,7 +17,7 @@
     "pre-commit": "npm run lint-fix && npm run pretty",
     "pre-push": "npm run lint",
     "watch": "tsc -w -p ./tsconfig.dev.json",
-    "test": "jest"
+    "test": "NODE_ENV=test && jest"
   },
   "keywords": [
     "nodejs",
