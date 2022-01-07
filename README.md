@@ -12,7 +12,7 @@ Node.js TypeScript Express Server Boilerplate
 
 ### (Using NVM)
 
-`nvm use` - references the `.nvmrc` config file and sets the correct node version.
+Execute: `nvm use` - references the `.nvmrc` config file and sets the correct node version.
 
 1. `npm ci` - install npm dependencies (make sure you're using the correct version of Node)
 2. `export NODE_ENV=local` - set the environment variable
