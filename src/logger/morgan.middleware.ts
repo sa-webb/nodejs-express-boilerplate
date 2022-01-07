@@ -1,4 +1,5 @@
 import morgan, { StreamOptions } from "morgan";
+import { __prod__ } from "../utils";
 import { logger } from "./index";
 
 const stream: StreamOptions = {
@@ -6,13 +7,12 @@ const stream: StreamOptions = {
 };
 
 const skip = () => {
-  const env = process.env.NODE_ENV;
-  return env !== "production";
+  return __prod__;
 };
 
-const MorganMiddleware = morgan(":method :url :status :res[content-length] - :response-time ms", {
+const morganMiddleware = morgan(":method :url :status :res[content-length] - :response-time ms", {
   stream,
   skip,
 });
 
-export default MorganMiddleware;
+export default morganMiddleware;
