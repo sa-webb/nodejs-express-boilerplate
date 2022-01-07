@@ -5,6 +5,8 @@ import type { AddressInfo } from "net";
 import Environment from "./environments/environment";
 import { setGlobalEnvironment } from "./global";
 
+import { logger } from "./logger";
+
 const env: Environment = new Environment();
 setGlobalEnvironment(env);
 const app: App = new App();
@@ -20,7 +22,7 @@ const serverError = (error: NodeJS.ErrnoException) => {
 
 const serverListening = () => {
   const addressInfo: AddressInfo = <AddressInfo>server.address();
-  console.log(`Server is listening on: http://localhost:${addressInfo.port}`);
+  logger.info(`Server is listening on: http://localhost:${addressInfo.port}`);
 };
 
 app
