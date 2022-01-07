@@ -7,6 +7,7 @@ module.exports = {
   setupFiles: ["dotenv/config"],
   globals: {
     "ts-jest": {
+      tsconfig: "tsconfig.base.json",
       // ignore WARN triggered by !tsconfig.json
       diagnostics: {
         ignoreCodes: [151001],
