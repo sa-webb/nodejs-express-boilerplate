@@ -5,11 +5,11 @@ enum Environments {
   TEST = "test",
 }
 
-enum EnvironmentFile {
+enum EnvFile {
   DEV = ".env",
   LOCAL = ".env.local",
   PRODUCTION = ".env.prod",
   TEST = ".env.test",
 }
 
-export { Environments, EnvironmentFile };
+export { Environments, EnvFile };
